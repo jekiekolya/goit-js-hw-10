@@ -1,6 +1,6 @@
-import './css/styles.css';
 import fetchCountries from './fetchCountries';
 import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import './css/styles.css';
 const debounce = require('lodash.debounce');
 
 // Getting Ref
@@ -88,9 +88,7 @@ function checkAmountCountry(countries) {
 // Function for checking error 404 (Not found)
 function checkError(countries) {
   if (countries.status === 404) {
-    Notify.failure('Oops, there is no country with that name', {
-      fontAwesomeIconStyle: 'shadow',
-    });
+    Notify.failure('Oops, there is no country with that name');
     throw new Error('Oops, there is no country with that name');
   }
 }
